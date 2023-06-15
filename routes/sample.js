@@ -41,7 +41,17 @@ router.post('/add',(req,res)=>{
 })
 
 router.put('/edit',(req,res)=>{
-    res.send(`hi this is put request`);
+    //res.send(`hi this is put request`);
+    //hos=JSON.parse(fs.readFile(path));
+    fs.readFile(path, 'utf8', (err, data) => {
+      if (err) {
+        console.error("Error" ,err);
+        return res.status(500).send('Error reading hospitals data');
+      }
+      const hospitals = JSON.parse(data);
+      console.log(hospitals)
+      res.send(`hi this is put request`);
+    })
 })
 
 router.delete('/del',(req,res)=>{
