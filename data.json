@@ -1,1 +1,32 @@
-[{"h_name":"KILM","p_count":"1000","h_loc":"TVM"},{"h_name":"Asther","p_count":"700","h_loc":"EKM"},{"h_name":"AMritha","p_count":"600","h_loc":"KLM"},{"h_name":"Jubilee","p_count":"400","h_loc":"TSR"},{"h_name":"Pran","p_count":"100","h_loc":"TVM"},{"h_name":"Medical College","p_count":"1200","h_loc":"Idukki"}]
+[
+  {
+    "h_name": "KILM",
+    "p_count": 1001,
+    "h_loc": "TVM"
+  },
+  {
+    "h_name": "Asther",
+    "p_count": "700",
+    "h_loc": "EKM"
+  },
+  {
+    "h_name": "AMritha",
+    "p_count": "600",
+    "h_loc": "KLM"
+  },
+  {
+    "h_name": "Jubilee",
+    "p_count": "400",
+    "h_loc": "TSR"
+  },
+  {
+    "h_name": "Pran",
+    "p_count": "100",
+    "h_loc": "TVM"
+  },
+  {
+    "h_name": "Medical College",
+    "p_count": "1200",
+    "h_loc": "Idukki"
+  }
+]
