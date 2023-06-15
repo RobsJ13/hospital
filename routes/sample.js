@@ -49,13 +49,38 @@ router.put('/edit',(req,res)=>{
         return res.status(500).send('Error reading hospitals data');
       }
       const hospitals = JSON.parse(data);
-      console.log(hospitals)
-      res.send(`hi this is put request`);
+      hospitals[0].p_count = Number(hospitals[0].p_count)+ 1;
+      fs.writeFile(path,JSON.stringify(hospitals,null,2),err=>{
+        if(err){
+          console.log('Error in parsing')
+        }
+      })
+      res.send("File Successfully Edited");
     })
 })
 
 router.delete('/del',(req,res)=>{
-    res.send(`hi this is del request`);
+  fs.readFile(path, 'utf8', (err, data) => {
+    if (err) {
+      console.error("Error" ,err);
+      return res.status(500).send('Error reading hospitals data');
+    }
+    const hospitals = JSON.parse(data);
+    console.log(hospitals.length);
+    if(hospitals.length === 0 || hospitals ===''){
+      res.send('No elements to delete.')
+    }
+    else{
+      delete (hospitals[0])
+      console.log(hospitals);
+      fs.writeFile(path,JSON.stringify(hospitals,null,2),err=>{
+        if(err){
+          console.log('Error in parsing');
+        }
+      })
+      res.send('Successfully deleted a record')
+    }
+  })
 })
 
 
